@@ -73,8 +73,12 @@ nav {
 main {
   margin: 40px;
 }
+p {
+  font-size: 20px;
+  font-family: 'EB Garamond', serif;
+}
 
-h2 {
+h3 {
   font-size: 24px;
   margin-bottom:
   20px;
