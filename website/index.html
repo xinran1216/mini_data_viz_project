@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Related Jobs Analysis</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <!-- <nav>
+      <a href="#" class="home-link">Home</a>
+      <ul class="navbar">
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+        <li><a href="#section4">Section 4</a></li>
+      </ul>
+    </nav> -->
+  </header>
+  <main>
+    <section id="intro-text">
+      <div class="center-container">
+        <h1>How to find a data field job?</h1>
+      </div>
+      <p class="author">Xinran Zhang</p>
+    </section>
+    <section id="section1">
+      <div class="section-text">
+        <h1>Where?</h1>
+      </div>
+      <!-- <h2>Section 1</h2> -->
+      <!-- Content for section 1 -->
+      <div class="plot-container">
+        <div id="plot-where" class="plot">{{ plot1 }}</div>
+        <div id="plot-where" class="plot">{{ plot2 }}</div>
+      </div>
+      <!-- <div class="plot" id="plot1">{{ plot1 }}</div> -->
+      <div>
+        <p>
+          LinkedIn and ZipRecruiter are two platforms that provide a great number of positions related to data science field. 
+          Unlike LinkedIn which is popular, ZipRecruiter is less known. Maybe the search area DC has a specific popular platform.
+        </p>
+        <!-- <p>
+          So next step I want to see the distribution of jobs in each locations. And I think a bar chart would be a better fit than map since 
+          the data only contains several states and the whole country map would be too big to use.
+        </p> -->
+        <p>
+          Since the search focuses on two areas: "United states" and "Washington D.C." and the search also includes the area near DC. 
+          The number of jobs in DMV area appears high. And not surprisingly, the number of jobs is the highest in California since there are so many 
+          tech companies there.
+        </p>
+        <p>
+          From the above two plots, LinkedIn and ZipRecruiter are two most useful platforms for job seekers. California and DMV area are both ideal places 
+          if people want to work in data related field.
+        </p>
+      </div>
+    </section>
+    <section id="section2">
+      <!-- <div class="plot" id="plot2">{{ plot2 }}</div> -->
+      <div class="section-text">
+        <h1>How?</h1>
+      </div>
+      <div class="how-text">
+        <p>
+          After we learn where can we find data related jobs, we can start preparing ourselves for potential opportunities.
+        </p>
+        <p>
+          Firstly, we need to know what qualifications are expected to see so we can prepare respectively. Secondly, what responsibilities 
+          does this job position require. And lastly, we want to learn what kind of benefits one company can offer.
+        </p>
+        <p>
+          With these three topics people focus on most, I draw three word clouds with the qualifications, responsibilities and benefits texts extracted from 
+          job descriptions. 
+        </p>
+      </div>
+      <div id="section-how" class="plot-container-how">
+        <div id="plot-how" class="plot"><img src="../Images/qualifications.png" alt="Qualifications Word Cloud"></div>
+        <div id="plot-how" class="plot"><img src="../Images/responsibilities.png" alt="Responsibilities Word Cloud"></div>
+        <div id="plot-how" class="plot"><img src="../Images/benefits.png" alt="Benefits Word Cloud"></div>
+      </div>
+      <div class="how-text">
+        <p>With the order left to right, the word clouds are drawed with the information from qualifications, responsibilities and benefits. And then we'll look into them one by one.</p>
+        <h3>Qualifications</h3>
+        <p>
+          There are certain technical skills requirements such as deep learning, big data, Python, natural language processing. 
+          And from the qualifications, most companies set a high standard for their potential employees.
+        </p>
+        <h3>Responsibilities</h3>
+        <p>
+          The daily work comes from responsibilities and potential employees can find if they are interested in the job or not through the responsibilities listed in job descriptions. 
+          And again most job responsibilities include deep learning, machine learning, modeling, distribute computing, etc. And most responsibilities match what are listed in the qualifications.
+        </p>
+        <h3>Benefits</h3>
+        <p>
+          Benefits can vary from company to company and from position to position. Apart from the base salary, companies usually offer life insurance, dental insurance and visual insurance. 
+          Sometimes, companies give stock options and tuition reimbursement. And potential candidates can research carefully into the benefits companies offer and make their selection.
+        </p>
+      </div>
+    </section>
+    <section id="section3">
+      <div class="section-text">
+        <h1>Other...</h1>
+      </div>
+      <div>
+        <p>Besides the above information, there might also be other topics people focus on when they look for a job.</p>
+      </div>
+      <div class="plot-container">
+        <div id="plot-where" class="plot">{{ plot3 }}</div>
+        <div id="plot-where" class="plot">{{ plot4 }}</div>
+      </div>
+
+      <div>
+        <p>
+          The above two pie charts depict the job type distribution and availability of work from home.
+        </p>
+        <h3>Job Type</h3>
+        <p>
+          According to the left plot, 87.4% of total job openings are looking for full time employees. And only 2.31% are for internships. 
+          The situation matches what is expected since looking for an internship is much more difficult than looking for a full time position. 
+          And other represents contractors, etc. 
+        </p>
+        <h3>Work From Home</h3>
+        <p>
+          After the pandemic, work from home becomes prevalent, especially in tech companies. And the plots shows that over 20% of the job descriptions clearly point out that 
+          work from home is available. 
+        </p>
+      </div>
+      <div class="section-text">
+        <h1>NLP</h1>
+      </div>
+      <div>
+        <p>
+          After learning about the details in job description, going back to the position itself seems reasonable. What people focus the most is still what the job is about. And with LDA (Latent Dirichlet Allocation) from 
+          natural language processing, we are able to generate top topics out of the texts from job descriptions. And from the topics generated, top key words can be extracted.
+        </p>
+      </div>
+      <div>
+        <div id="plot-where" class="plot">{{ plot5 }}</div>
+      </div>
+      <div>
+        <p>
+          A bar chart can display the distribution of top keywords and with a drop-down menu, topics from different search words can be displayed separately.
+          <br>
+          From the bar chart, people can learn more about what each job category cares the most.
+        </p>
+      </div>
+
+      <!-- <h2>Section 3</h2> -->
+      <!-- Content for section 3 -->
+    </section>
+    <section id="section4">
+      <div class="section-text">
+        <h1>Conclusion</h1>
+      </div>
+      <div>
+        <p>
+          Job description contains a lot of information for potential employees. And it can help a lot if used well.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
